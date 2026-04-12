@@ -12,4 +12,4 @@ jobs:
       - name: Pull C++ container
         run: docker pull kbuffardi/cpp-container:latest
       - name: Test in container
-        run: docker run -v $(pwd):/usr/src -t kbuffardi/cpp-container
+        run: docker run --platform linux/amd64 -v $(pwd):/usr/src -t kbuffardi/cpp-container
