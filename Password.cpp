@@ -1,5 +1,6 @@
 #include "Password.h"
 #include <string>
+#include <vector>
 
 using std::string;
 
@@ -35,4 +36,28 @@ bool Password::has_mixed_case(string str)
     }
   }
   return false;
+}
+
+unsigned int Password::unique_characters(string str)
+{
+  int num_unique = 0;
+  bool seen = false;
+  std::vector<int> diff_chars;
+  for (int i = 0; i < str.size(); i ++){
+    num_unique += 1;
+    diff_chars.push_back(str[i]);
+    seen = false;
+    for (int j = 0; j < diff_chars.size(); j ++){
+      if (str[i] == diff_chars[j]){
+        if (!seen){
+          seen = true;
+        }
+        else{
+          diff_chars.pop_back();
+          num_unique -= 1;
+        }
+      }
+    }
+  }
+  return num_unique;
 }
