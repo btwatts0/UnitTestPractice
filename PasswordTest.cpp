@@ -14,7 +14,7 @@ class PasswordTest : public ::testing::Test
 		virtual void TearDown(){} //clean up after each test, (before destructor)
 };
 
-/*
+
 TEST(PasswordTest, two_repeats_three_total)
 {
 	Password my_password;
@@ -140,7 +140,7 @@ TEST(PasswordTest, special_then_mixed)
 	Password my_password;
 	EXPECT_TRUE(my_password.has_mixed_case("^aA"));
 }
-*/
+
 
 TEST(PasswordTest, generic_unique_characters)
 {
